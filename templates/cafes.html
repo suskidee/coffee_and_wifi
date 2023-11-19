@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Coffee and Wifi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body class="d-flex h-100  text-white bg-dark">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column vh-100">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text-center my-5 mt-auto">
+            <h1>All Cafes</h1>
+          </div>
+          <div class="mt-auto my-5">
+            <table class="table table-dark table-striped table-hover">
+              <thead class="table">
+                <tr>
+                    <th>cafe</th>
+                    <th>location</th>
+                    <th>open</th>
+                    <th>close</th>
+                    <th>coffee</th>
+                    <th>wifi</th>
+                    <th>power</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for obj in object_list %}
+                <tr>
+                    <td>{{ obj.cafe }}</td>
+                    <td><a href="{{ obj.location }}">{{ obj.city }}</a></td>
+                    <td>{{ obj.open }}</td>
+                    <td>{{ obj.close }}</td>
+                    <td>{{ obj.coffee }}</td>
+                    <td>{{ obj.wifi }}</td>
+                    <td>{{ obj.power }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+            <div class="text-center mt-auto">
+              <p><a href="{% url 'index' %}">Return to index page</a></p>
+              <p><a href="{% url 'add' %}">add new cafe</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
