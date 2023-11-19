@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'cafe',
     'crispy_forms',
     'bootstrap4',
-    'crispy_bootstrap4',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
